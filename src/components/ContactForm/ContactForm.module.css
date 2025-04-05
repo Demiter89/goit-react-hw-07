@@ -1,59 +1,39 @@
-/* Основні стилі для форми */
 .form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    /* Відстань між полями вводу */
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    /* Максимальна ширина форми */
-    margin: 0 auto;
+    gap: 16px;
+    /* Відстань між інпутами та кнопкою */
+    margin-bottom: 24px;
+    /* Відстань від форми до списку контактів */
+    margin-top: 24px;
+    padding-top: 10px;
 }
 
-/* Стиль для label */
 label {
-    font-size: 1rem;
-    font-weight: bold;
+    font-size: 16px;
     color: #333;
-    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Стилі для input */
 input {
-    padding: 10px;
-    font-size: 1rem;
+    padding: 8px;
+    font-size: 16px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    transition: border-color 0.3s ease;
+    border-radius: 8px;
 }
 
-input:focus {
-    border-color: #007bff;
-}
-
-/* Стилі для кнопки */
 button {
-    background-color: #007bff;
+    padding: 10px;
+    font-size: 16px;
     color: white;
-    padding: 10px 20px;
-    font-size: 1rem;
+    background-color: #4CAF50;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #0056b3;
-}
-
-/* Стилі для попереджувальних повідомлень */
-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+    background-color: #45a049;
 }

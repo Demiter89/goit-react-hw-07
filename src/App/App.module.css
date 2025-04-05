@@ -3,51 +3,39 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* Вирівнюємо по вертикалі */
   align-items: center;
+  /* Вирівнюємо по горизонталі */
   min-height: 100vh;
-  /* Завжди по висоті екрану */
-  background: linear-gradient(to bottom, #f0f4f8, #c9d6e3);
-  /* Легкий градієнт для фону */
-  font-family: 'Arial', sans-serif;
-  /* Стандартний шрифт */
-  text-align: center;
+  background-color: #f5f5f5;
   padding: 20px;
 }
 
-/* Заголовок */
 h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  /* Вирівнює текст по центру */
   margin-bottom: 20px;
   color: #333;
 }
 
-/* Контейнер для форми і списку */
-.container {
-  width: 100%;
-  max-width: 600px;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.title {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 0.15em;
+  background: linear-gradient(90deg, #4db6ac, #00897b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Якщо хочеш додати відступи між елементами */
-.container>* {
-  margin-bottom: 20px;
-}
-
-/* Тло для кнопки додавання */
-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #0056b3;
+.subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  font-style: italic;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  color: #555;
+  margin-bottom: 1rem;
 }
