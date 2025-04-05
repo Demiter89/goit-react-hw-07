@@ -1,6 +1,6 @@
-import { createSlice, createSelector } from '@reduxjs/toolkit';
-import { fetchContacts, addContact } from './contactsOps';
-import { selectNameFilter } from './filtersSlice'; // Імпортуємо фільтр
+import { createSlice, createSelector } from '@reduxjs/toolkit'; 
+import { fetchContacts, addContact, deleteContact } from './contactsOps';
+import { selectNameFilter } from './filtersSlice';
 
 const contactsSlice = createSlice({
   name: 'contacts',
@@ -12,6 +12,7 @@ const contactsSlice = createSlice({
   reducers: {},
   extraReducers: builder => {
     builder
+      // Fetch contacts
       .addCase(fetchContacts.pending, state => {
         state.loading = true;
       })
@@ -23,6 +24,8 @@ const contactsSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
+
+      // Add contact
       .addCase(addContact.pending, state => {
         state.loading = true;
       })
@@ -33,21 +36,32 @@ const contactsSlice = createSlice({
       .addCase(addContact.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
+      })
+
+      // Delete contact ✅
+      .addCase(deleteContact.pending, state => {
+        state.loading = true;
+      })
+      .addCase(deleteContact.fulfilled, (state, action) => {
+        state.loading = false;
+        state.items = state.items.filter(contact => contact.id !== action.payload);
+      })
+      .addCase(deleteContact.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
       });
   },
 });
 
 export default contactsSlice.reducer;
 
-// Додаємо СЕЛЕКТОРИ 👇
-
+// Селектори
 export const selectContactsItems = state => state.contacts.items;
 
 export const selectFilteredContacts = createSelector(
   [selectContactsItems, selectNameFilter],
   (contacts, filter) => {
     if (!Array.isArray(contacts)) return [];
-
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
     );
