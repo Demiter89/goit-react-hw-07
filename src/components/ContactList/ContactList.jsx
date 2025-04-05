@@ -1,13 +1,14 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact } from "../../redux/contactsOps";
+import { useDispatch, useSelector } from 'react-redux'; 
+import { deleteContact } from '../../redux/contactsOps';
+import { selectFilteredContacts } from '../../redux/contactsSlice';
 import styles from './ContactList.module.css';
 
 const ContactList = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector((state) => state.contacts.items);
-  
+  const contacts = useSelector(selectFilteredContacts);
+
   const handleDelete = (id) => {
-    dispatch(deleteContact(id));  // Викликаємо функцію для видалення контакту
+    dispatch(deleteContact(id));
   };
 
   return (

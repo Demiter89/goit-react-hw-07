@@ -1,11 +1,12 @@
-import { useEffect } from 'react';  
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchContacts } from '../redux/contactsOps';
 
+import ContactForm from '../components/ContactForm/ContactForm'; // ✅ Додано
 import ContactList from '../components/ContactList/ContactList';
 import Filter from '../components/Filter/Filter';
 
-import './App.css';  // Оновлений імпорт
+import styles from './App.module.css';
 
 function App() {
   const dispatch = useDispatch();
@@ -15,10 +16,13 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="app">  {/* Замість styles.app */}
+    <div className={styles.app}> {/* ✅ Використано стилі з модуля */}
       <h1>Книга контактів</h1>
-      <Filter />
-      <ContactList />
+      <div className={styles.container}>
+        <ContactForm />            {/* ✅ Додано компонент форми */}
+        <Filter />
+        <ContactList />
+      </div>
     </div>
   );
 }

@@ -1,33 +1,51 @@
-.wrapper {
-    margin-top: 20px;
-}
-
-.list {
+/* Стилі для списку контактів */
+.contactList {
     list-style: none;
     padding: 0;
+    margin: 20px 0;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    /* Центруємо список */
 }
 
-.item {
+/* Стилі для кожного елементу списку */
+.contactItem {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 8px;
-    border-bottom: 1px solid #444;
-    padding-bottom: 4px;
+    /* Вирівнюємо контакт і кнопку */
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
 }
 
-.btn {
-    background-color: #e63946;
+.contactItem:hover {
+    background-color: #e6e6e6;
+}
+
+/* Стилі для тексту в списку */
+.contactItem p {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+}
+
+/* Стилі для кнопки видалення */
+.contactItem button {
+    background-color: #ff4d4d;
     color: white;
     border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-    background-color: #d62828;
-}
-
-.error {
-    color: red;
+.contactItem button:hover {
+    background-color: #e60000;
 }
